@@ -2,14 +2,9 @@ import express from "express";
 import { port } from "./config/index.js";
 import { appRoutes } from "./routers/routers.js";
 import "./config/server.js";
-import { LoginAuthMiddleware } from "./middlewares/LoginAuthmiddleware.js";
 
 const app = express();
 app.use(express.json());
-
-const router = express.Router();
-
-// router.use(LoginAuthMiddleware);
 
 // --- routing ----
 try {

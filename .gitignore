@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+#for set remote with authentication  --> also check access in token which created in github
+git remote set-url origin https://{{username}}:{{token}}@github.com/{{username}}/{{reponame}}
+
+
+
+
+
+

@@ -11,12 +11,9 @@ export const UserRegister = async (req, res) => {
 
     const result = await data.save();
 
-    console.log(result);
-
     let responseData = { message: "register successfullly", data: result };
     res.send(201, responseData);
   } catch (error) {
-    console.log(error);
     res.send(500, error);
   }
 };
@@ -62,7 +59,6 @@ export const HomeUserRequst = (req, res) => {
 
     res.send(title);
   } catch (error) {
-    console.log("error", error);
     res.send(error);
   }
 };
@@ -73,7 +69,6 @@ export const UsersListRequest = async (req, res) => {
 
     let result = { message: "successfully users data loaded", data: users };
 
-    console.log(result);
     res.send(result);
   } catch (error) {
     res.send(error);
@@ -83,13 +78,11 @@ export const UsersListRequest = async (req, res) => {
 export const SingleUsersRequest = async (req, res) => {
   try {
     let { id } = req.params;
-    console.log(id);
 
     let user = await UserModel.findOne({ _id: new Types.ObjectId(id) });
 
     let result = { message: "successfully users data loaded", data: user };
 
-    console.log(result);
     res.send(result);
   } catch (error) {
     res.send(error);
